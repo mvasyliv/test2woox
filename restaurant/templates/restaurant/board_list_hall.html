@@ -1,0 +1,35 @@
+{% extends 'restaurant/base.html' %}
+{% block page_header %}Список столів в залі{% endblock %}
+{% block boards_in_hall %}
+    <table class="table table-border">
+        <thead class="thead_table">
+            <tr>
+                <th>№ стола</th>
+                <th>Кількість місць</th>
+                <th>Форма стола</th>
+                <th>Довжина стола</th>
+                <th>Ширина стола</th>
+                <th>Координата стола по горизонталі</th>
+                <th>Координата стола по вертикалі</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in boards %}
+                <div class="board">
+                    <tr>
+                        <td>{{ b.board_number }}</td>
+                        <td>{{ b.number_seats }}</td>
+                        <td>{{ b.form }}</td>
+                        <td>{{ b.board_length }}</td>
+                        <td>{{ b.board_width }}</td>
+                        <td>{{ b.coordinate_horizontal }}</td>
+                        <td>{{ b.coordinate_vertical }}</td>
+                    </tr>
+                </div>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% comment %}
+{% block page_footer %}{% endblock %}
+{% endcomment %}

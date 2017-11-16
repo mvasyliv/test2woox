@@ -1,0 +1,8 @@
+{% extends 'restaurant/base.html' %}
+{% block page_header %}Замовлення стола{% endblock %}
+{% block boards_in_hall %}
+    <form method="post" class="order">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+{% endblock %}
